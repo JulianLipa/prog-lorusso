@@ -61,7 +61,7 @@
 
 .windowsDiv{
     display: flex;
-    margin-top: calc(var(--margin));
+    margin-top: calc(var(--margin)*2);
 }
 
 .windowDiv{
@@ -69,9 +69,13 @@
     justify-content: center;
     align-items: center;
     padding: 1.5% 2%;
-    border-radius: 10px 10px 0 0;
+    border-radius: var(--border) var(--border) 0 0;
     border: 1px solid white;
     font-weight: 100;
+}
+
+.windowDiv:hover{
+    background-color: rgba(255,255,255,0.3);
 }
 
 .windowDiv p{
@@ -79,6 +83,14 @@
 }
 
 .selected{
+    background-color: white !important;
+    color: var(--main-color);
+}
+
+.filterSection{
+    padding: calc(var(--margin));
+    border: 1px solid white;
+    border-radius: 0 var(--border) var(--border) var(--border);
     background-color: white;
     color: var(--main-color);
 }

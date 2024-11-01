@@ -7,6 +7,7 @@ import styles from "@/app/page.module.css";
 import "@/app/globals.css";
 
 import { PiHandshake } from "react-icons/pi";
+import Link from "next/link";
 
 const Hero = () => {
   const [windowsCategories, setwindowsCategories] = useState([]);
@@ -35,27 +36,27 @@ const Hero = () => {
           </h4>
           <section className={styles.windowsSection}>
             <div className={styles.windowsDiv}>
-              <div className={`${styles.windowDiv} ${styles.selected}`}>
+              <Link href={""} className={`${styles.windowDiv} ${styles.selected}`}>
                 <PiHandshake />
                 <p className="subtitle">Comprar</p>
-              </div>
-              <div className={styles.windowDiv}>
+              </Link>
+              <Link href={""} className={styles.windowDiv}>
                 <PiHandshake />
                 <p className="subtitle">Alquilar</p>
-              </div>
-              <div className={styles.windowDiv}>
+              </Link>
+              <Link href={""} className={styles.windowDiv}>
                 <PiHandshake />
                 <p className="subtitle">Vender</p>
-              </div>
-              <div className={styles.windowDiv}>
+              </Link>
+              <Link href={""} className={styles.windowDiv}>
                 <PiHandshake />
                 <p className="subtitle">Tasar</p>
-              </div>
+              </Link>
             </div>
-            <div>
+            <section className={styles.filterSection}>
               <h4 className="subtitle">Filtros</h4>
               <h4 className="subtitle">Buscá de acuerdo a tus necesidades</h4>
-            </div>
+            </section>
           </section>
         </div>
       </section>

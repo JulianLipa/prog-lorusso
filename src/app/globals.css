@@ -16,6 +16,7 @@
   --main-color: #002d56;
   --secondary-color: #2ecc71;
   --margin: 1em;
+  --border: 10px;
 }
 
 .title {
