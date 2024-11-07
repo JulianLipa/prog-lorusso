@@ -1,0 +1,55 @@
+.filterForm {
+  display: flex;
+  width: 100%;
+  margin-top: var(--margin);
+}
+
+.filterForm label {
+  display: inline-block;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  margin-left: calc(var(--margin) / 1.5);
+  pointer-events: none;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 0;
+  margin-right: calc(var(--margin));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.inputContainer input,
+.inputContainer select {
+  field-sizing: initial;
+  padding: calc(var(--margin) / 2) calc(var(--margin) * 2);
+  margin-right: calc(var(--margin) / 2);
+  box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.4);
+  border-radius: calc(var(--border));
+  field-sizing: content;
+  color: rgb(161, 161, 161) !important;
+}
+
+.inputContainer input:hover,
+.inputContainer select:hover {
+  background-color: var(--secondary-color);
+}
+
+.inputContainer select:after {
+  background-color: white;
+}
+
+.filterForm label input:focus {
+  outline: none !important;
+  border: none !important;
+}
