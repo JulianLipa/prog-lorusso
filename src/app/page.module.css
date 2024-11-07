@@ -43,9 +43,9 @@
 }
 
 .heroSection .heroDiv h3 {
-  font-size: 2em;
-  width: 70%;
-  margin-bottom: calc(var(--margin)/2);
+  font-size: 2.5em;
+  width: 85%;
+  margin-bottom: calc(var(--margin) / 2);
 }
 
 .heroSection .heroDiv .heroTitle h4 {
@@ -59,40 +59,68 @@
 
 /*HERO WINDOWS COMPONENT*/
 
-.windowsDiv{
-    display: flex;
-    margin-top: calc(var(--margin)*2);
+.windowsDiv {
+  display: flex;
+  margin-top: calc(var(--margin) * 2);
 }
 
-.windowDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5% 2%;
-    border-radius: var(--border) var(--border) 0 0;
-    border: 1px solid white;
-    font-weight: 100;
+.windowDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5% 2%;
+  border-radius: var(--border) var(--border) 0 0;
+  border: 1px solid white;
+  font-weight: 100;
 }
 
-.windowDiv:hover{
-    background-color: rgba(255,255,255,0.3);
+.windowDiv:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.windowDiv p{
-    margin-left: 1%;
+.windowDiv p {
+  margin-left: 1%;
 }
 
-.selected{
-    background-color: white !important;
-    color: var(--main-color);
+.selected {
+  background-color: white !important;
+  color: var(--main-color);
 }
 
-.filterSection{
-    padding: calc(var(--margin));
-    border: 1px solid white;
-    border-radius: 0 var(--border) var(--border) var(--border);
-    background-color: white;
-    color: var(--main-color);
+.filterSection {
+  padding: calc(var(--margin));
+  border: 1px solid white;
+  border-radius: 0 var(--border) var(--border) var(--border);
+  background-color: white;
+  color: var(--main-color);
+}
+
+/*PROPERTY CARD*/
+
+.propertySection{
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--margin)*2);
+  margin-bottom: calc(var(--margin)*2);
+  width: 100%;
+}
+
+.propertyTitle{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.propertyDiv{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.propertyTitle h3{
+  width: 100vw;
+  text-align: center;
+  margin: var(--margin) 0;
 }
 
 /*RESPONSIVE*/
@@ -108,5 +136,11 @@
 
   .heroSection .heroDiv h4 {
     display: none;
+  }
+
+  .propertySection{
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: center;
   }
 }

@@ -4,13 +4,13 @@ import { createContext, useState, useContext } from "react";
 const AppContext = createContext(undefined);
 
 export const AppContextProvider = ({ children }) => {
-  const [test, setTest] = useState([]);
+  const [favourites, setFavourites] = useState([]);
   
   return (
     <AppContext.Provider
       value={{
-        test,
-        setTest
+        favourites,
+        setFavourites
       }}>
       {children}
     </AppContext.Provider>

@@ -14,9 +14,16 @@
 
 :root {
   --main-color: #002d56;
-  --secondary-color: #2ecc71;
+  --secondary-color: #dae9ff;
+  --success-color: #008000;
   --margin: 1em;
   --border: 10px;
+  --height: 40px;
+  --shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
+}
+
+.main-color{
+  color: var(--main-color);
 }
 
 .title {
@@ -29,4 +36,46 @@
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   line-height: 1em;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select::after {
+  position: absolute;
+  right: 0;
+}
+
+select,
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: var(--height);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--margin));
+  background-color: var(--main-color);
+  color: white;
+  border-radius: var(--border);
+  height: var(--height);
+  transition: all ease 0.5s !important;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  box-shadow: var(--shadow);
+}
+
+.imageShowed {
+  width: auto;
+  height: 40vh !important;
 }

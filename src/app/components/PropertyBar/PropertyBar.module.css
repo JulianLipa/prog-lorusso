@@ -1,0 +1,35 @@
+.property_bar {
+  margin-top: 2vh;
+  color: var(--main-color) !important;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--margin) / 2);
+}
+
+.property_detail {
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  padding: 0 2%;
+  border-radius: var(--border);
+  justify-content: initial;
+  align-items: center;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+  width: auto;
+  height: 3em;
+  display: flex;
+}
+
+.property_detail img {
+  width: 1em;
+  height: auto;
+}
+
+.property_detail p {
+  margin-left: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--main-color) !important;
+  margin-top: 0;
+}
