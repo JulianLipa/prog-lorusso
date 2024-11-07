@@ -10,8 +10,18 @@ const Page = async ({ params }) => {
   const { id } = params;
   console.log(id)
 
-  const response = await getOneProductById(id);
-  const data = response.product;
+  let data;
+
+  try {
+    const response = await getOneProductById(id);
+    if (!response || !response.product) {
+      return { notFound: true };
+    }
+    data = response.product;
+  } catch (error) {
+    console.error("Error fetching product data:", error);
+    return { notFound: true };
+  }
 
   return <DeptosComponent data={data}/>;
 };

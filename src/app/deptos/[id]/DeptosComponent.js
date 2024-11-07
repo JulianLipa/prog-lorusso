@@ -4,7 +4,6 @@ import "@/app/globals.css";
 import styles from "@/app/deptos/[id]/page.module.css";
 import PropertyBar from "@/app/components/PropertyBar/PropertyBar";
 import GalleryView from "@/app/components/GalleryView/GalleryView";
-import {getOneProductById} from "@/app/actions"
 
 const DeptosComponent = ({data}) => {
   return (
