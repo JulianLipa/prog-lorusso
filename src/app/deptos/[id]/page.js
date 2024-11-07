@@ -7,7 +7,7 @@ import DeptosComponent from "@/app/deptos/[id]/DeptosComponent";
 import { getOneProductById } from "@/app/actions";
 
 const Page = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;  
   console.log(id)
 
   let data;
