@@ -19,7 +19,7 @@ const PropertiesDestacadas = async () => {
             <PropertyCard data={response.products[2]} loading={true} />
           </div>
         )}
-        <Link className="button subtitle" href={"/deptos"}>Ver todas las propiedades</Link>
+        <Link className={`button subtitle ${styles.buttonProperties}`} href={"/deptos"}>Ver todas las propiedades</Link>
       </div>
     </section>
   );
