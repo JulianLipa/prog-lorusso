@@ -58,6 +58,7 @@
   .section_property{
     display: flex;
     justify-content: center;
+    margin-top: var(--margin);
   }
   
   .div_images{
@@ -72,6 +73,7 @@
     flex-wrap: wrap;
     align-items: initial;
     height: fit-content;
+    gap: var(--margin);
   }
 
   .div_text h2:first-child{
@@ -85,4 +87,5 @@
   
   .price{
     color: var(--success-color);
+    width: 100%;
   }

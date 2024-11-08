@@ -11,6 +11,10 @@
   border: 1px solid rgba(0,0,0,0);
 }
 
+.propertyCardTitle{
+  margin-bottom: calc(var(--margin)/2);
+}
+
 .hover_div {
   position: absolute;
   z-index: 100;
