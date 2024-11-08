@@ -3,12 +3,10 @@ import Image from "next/image";
 import "@/app/globals.css";
 import styles from "@/app/page.module.css";
 import PropertyCard from "@/app/components/PropertyCard/PropertyCard";
-import { getAllProductsDB, getOneProductById } from "@/app/actions";
+import { getAllProductsDB } from "@/app/actions";
 
 const PropertiesDestacadas = async () => {
   const response = await getAllProductsDB();
-  const response2 = await getOneProductById(1);
-  console.log(response, response2);
 
   return (
     <section className={styles.propertyTitle}>
