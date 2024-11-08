@@ -19,7 +19,7 @@ const getOneProductById = async (id) => {
 
   let objectId;
   try {
-    objectId = new mongoose.Types.ObjectId(id);
+    objectId = new mongoose.Types.ObjectId(id.toString());
   } catch (error) {
     console.error("Invalid ObjectId:", error.message);
     return { product: null };

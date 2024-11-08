@@ -1,29 +1,34 @@
-import Link from "next/link";
-import Image from "next/image";
+import { getOneProductById } from "@/app/actions";
+import DeptosComponent from "@/app/deptos/[id]/DeptosComponent";
 import "@/app/globals.css";
 import styles from "@/app/deptos/[id]/page.module.css";
 
-import DeptosComponent from "@/app/deptos/[id]/DeptosComponent";
-import { getOneProductById } from "@/app/actions";
-
 const Page = async ({ params }) => {
-  const { id } = await params;  
-  console.log(id)
-
-  let data;
+  const { id } = await params;
+  
+  let data = null;
+  let error = null;
 
   try {
     const response = await getOneProductById(id);
-    if (!response || !response.product) {
-      return { notFound: true };
+    if (response && response.product) {
+      data = response.product;
+    } else {
+      error = "Product not found";
     }
-    data = response.product;
-  } catch (error) {
-    console.error("Error fetching product data:", error);
-    return { notFound: true };
+  } catch (err) {
+    error = "Error fetching product data";
   }
 
-  return <DeptosComponent data={data}/>;
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+
+  return <DeptosComponent data={data} />;
 };
 
 export default Page;
