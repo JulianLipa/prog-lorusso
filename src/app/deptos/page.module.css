@@ -1,0 +1,13 @@
+.mainDiv{
+    padding: 8vw 5vw;
+    margin: 0 auto;
+}
+
+.marginAmb{
+    margin-bottom: var(--margin);
+}
+
+.marginAmb2{
+    margin-bottom: var(--margin);
+    margin-top: calc(var(--margin)*2);
+}

@@ -9,33 +9,59 @@ import GalleryView from "@/app/components/GalleryView/GalleryView";
 import PropertyBar from "@/app/components/PropertyBar/PropertyBar";
 import { FaRegHeart } from "react-icons/fa";
 import { BsEye } from "react-icons/bs";
+import { useAppContext } from "@/app/contexts/AppContexts";
 
 const PropertyCard = (data, loading) => {
-  data = data.data;
+  const { favourites, setFavourites } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
+  
+  if (!data.amb) {
+    data = data.data;
+  }
 
   const viewMoreClicked = () => {
     setIsLoading(true);
   };
 
+  const addFavourite = (data) => {
+    if (!favourites.some((favourite) => favourite._id === data._id)) {
+      setFavourites([...favourites, data]);
+    }
+  };
+
   return (
     <div className={styles.property_card}>
       <div className={styles.hover_div}>
-        <Link className="button subtitle" onClick={viewMoreClicked} href={`/deptos/${data._id}`}>
+        <Link
+          className="button subtitle"
+          onClick={viewMoreClicked}
+          href={`/deptos/${data._id}`}
+        >
           {isLoading ? (
-              <Image src="/images/loading.gif" alt="Loading" width={24} height={24} />
-            ) : (
-              <>
-                <BsEye className="text-xl" /> Ver más
-              </>
-            )}
+            <Image
+              src="/images/loading.gif"
+              alt="Loading"
+              width={24}
+              height={24}
+            />
+          ) : (
+            <>
+              <BsEye className="text-xl" /> Ver más
+            </>
+          )}
         </Link>
-        <Link className="button subtitle" href=""><FaRegHeart className="text-xl" /></Link>
+        <a className="button subtitle" onClick={() => addFavourite(data)}>
+          <FaRegHeart className="text-xl" />
+        </a>
       </div>
       <div className={styles.gallery_div}>
         <GalleryView folderName={data.folderName} />
       </div>
-      {!loading && <h2 className={`subtitle text-2xl ${styles.propertyCardTitle}`}>{data.title}</h2>}
+      {!loading && (
+        <h2 className={`subtitle text-2xl ${styles.propertyCardTitle}`}>
+          {data.title}
+        </h2>
+      )}
       {loading && <h2 className="subtitle"></h2>}
       <PropertyBar data={data} loadingState={loading} />
       {!loading && (

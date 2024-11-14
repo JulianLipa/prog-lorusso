@@ -34,7 +34,4 @@ const getOneProductById = async (id) => {
   }
 };
 
-
-
-
 export { getAllProductsDB, getOneProductById };

@@ -5,12 +5,16 @@ const AppContext = createContext(undefined);
 
 export const AppContextProvider = ({ children }) => {
   const [favourites, setFavourites] = useState([]);
+  const [filter, setFilter] = useState([]);
+  console.log(filter)
   
   return (
     <AppContext.Provider
       value={{
         favourites,
-        setFavourites
+        setFavourites,
+        filter,
+        setFilter
       }}>
       {children}
     </AppContext.Provider>

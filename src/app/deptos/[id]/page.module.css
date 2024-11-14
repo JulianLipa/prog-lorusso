@@ -22,6 +22,10 @@
   .button_deptos:first-child {
     font-weight: 400 !important;
   }
+
+  .favouriteIcon:hover{
+    color: indianred;
+  }
   
   .div_images{
     width: 30vw;
@@ -69,7 +73,7 @@
   .div_text{
     margin-left: calc(var(--margin)* 2);
     display: flex;
-    width: 40vw;
+    width: 30vw;
     flex-wrap: wrap;
     align-items: initial;
     height: fit-content;
