@@ -31,6 +31,8 @@
 
 .inputContainer input,
 .inputContainer select {
+  display: flex;
+  align-items: center;
   field-sizing: initial;
   padding: calc(var(--margin) / 2) calc(var(--margin) * 2);
   margin-right: calc(var(--margin) / 2);
@@ -52,4 +54,14 @@
 .filterForm label input:focus {
   outline: none !important;
   border: none !important;
+}
+
+@media (max-width: 800px) {
+  .inputIcon {
+    display: none !important;
+  }
+  .inputContainer input,
+  .inputContainer select {
+    padding: 0 calc(var(--margin) * 1.4);
+  }
 }

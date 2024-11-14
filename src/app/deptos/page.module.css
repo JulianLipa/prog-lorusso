@@ -1,6 +1,7 @@
 .mainDiv{
     padding: 8vw 5vw;
     margin: 0 auto;
+    color: var(--main-color);
 }
 
 .marginAmb{
@@ -10,4 +11,11 @@
 .marginAmb2{
     margin-bottom: var(--margin);
     margin-top: calc(var(--margin)*2);
+}
+
+@media (max-width: 1130px) {
+    .mainDiv{
+        padding: 25vw 5vw;
+        margin: 0 auto;
+    }
 }

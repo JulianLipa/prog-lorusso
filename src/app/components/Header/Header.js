@@ -6,13 +6,11 @@ import { FaRegHeart } from "react-icons/fa";
 import "@/app/globals.css";
 import styles from "@/app/page.module.css";
 import { useAppContext } from "@/app/contexts/AppContexts";
-import FavouritesSection from "./FavouritesSection";
 import { useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 
 const Header = () => {
   const { favourites, setFavourites } = useAppContext();
-  console.log(favourites);
   const [confirmRemoveId, setConfirmRemoveId] = useState(null);
 
   const handleRemoveRequest = (_id) => {
