@@ -1,6 +1,4 @@
-"use client";
 
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import FilterSection from "@/app/components/FilterSection/FilterSection";
 
@@ -10,7 +8,7 @@ import "@/app/globals.css";
 import { PiHandshake } from "react-icons/pi";
 import Link from "next/link";
 
-const Hero = () => {
+const Hero = ({deptos}) => {
   return (
     <section className={styles.heroSection}>
       <section className="">
@@ -42,7 +40,7 @@ const Hero = () => {
               </button>
             </div>
 
-            <FilterSection/>
+            <FilterSection deptos={deptos}/>
           </section>
         </div>
       </section>

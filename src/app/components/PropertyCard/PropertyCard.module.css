@@ -139,5 +139,6 @@
 @media (max-width: 800px) {
   .property_card {
     width: 60vw !important;
+    padding: 3%;
   }
 }

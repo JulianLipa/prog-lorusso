@@ -14,24 +14,24 @@
   height: 10vh;
   width: 100vw;
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .favouriteIcon {
   position: relative;
 }
 
-.hoverTitle{
-  margin: calc(var(--margin) / 2) 0 ;
+.hoverTitle {
+  margin: calc(var(--margin) / 2) 0;
 }
 
-.favouriteIconDot{
+.favouriteIconDot {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dot{
+.dot {
   position: absolute;
   height: 4px;
   width: 4px;
@@ -58,7 +58,7 @@
   margin-top: calc(var(--margin) / 2);
 }
 
-.removeIcon:hover{
+.removeIcon:hover {
   color: indianred;
 }
 
@@ -136,8 +136,8 @@
 }
 
 .heroDiv {
+  position: relative;
   width: 45vw;
-  padding-left: 2.5vw;
 }
 
 /*HERO WINDOWS COMPONENT*/
@@ -178,6 +178,37 @@
   color: var(--main-color);
 }
 
+/*FILTER*/
+
+.filteredResults {
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: var(--margin);
+  border-radius: var(--border);
+  height: 60%;
+  overflow-y: auto;
+}
+.filteredDiv a {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  color: var(--main-color);
+  padding: var(--margin);
+  border-radius: var(--border);
+  margin-bottom: calc(var(--margin));
+}
+
+.filteredText {
+  margin-left: calc(var(--margin) / 2);
+}
+
+.filteredDiv .imageShowed {
+  width: 80px !important;
+  height: auto !important;
+}
+
 /*PROPERTY CARD*/
 
 .propertySection {
@@ -206,15 +237,28 @@
   margin: var(--margin) 0;
 }
 
+/*ABOUT SECTION*/
+
+.aboutDiv{
+  padding: 0 5vw;
+}
+
 /*RESPONSIVE*/
+
+@media (max-width: 1130px) {
+  .heroDiv {
+    width: 60vw;
+  }
+}
 
 @media (max-width: 800px) {
   .heroDiv {
-    width: 100%;
-    padding: 0 5vw;
+    width: 95%;
+    padding: 0 0 0 5vw;
+    position: relative;
   }
   .heroSection .heroDiv h3 {
-    font-size: 2em;
+    font-size: 1.8  em;
   }
 
   .heroSection .heroDiv h4 {

@@ -10,13 +10,17 @@ import "@/app/globals.css";
 import Hero from "@/app/components/Hero/Hero";
 import PropertiesDestacadas from "./components/PropertiesDestacadas/PropertiesDestacadas";
 import InputSearch from "@/app/components/InputSearch/InputSearch";
+import HeroServerSide from "./components/Hero/HeroServerSide";
+import AboutSection from "./components/AboutSection/AboutSection";
 
 export default function Home() {
+
   return (
     <div className="">
       <main className="main">
-        <Hero />
+        <HeroServerSide />
         <PropertiesDestacadas />
+        <AboutSection />
       </main>
       <footer className=""></footer>
     </div>
