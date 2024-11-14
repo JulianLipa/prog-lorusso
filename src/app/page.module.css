@@ -17,6 +17,89 @@
   z-index: 100;
 }
 
+.favouriteIcon {
+  position: relative;
+}
+
+.hoverTitle{
+  margin: calc(var(--margin) / 2) 0 ;
+}
+
+.favouriteIconDot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot{
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+.favouriteIcon:hover > .hoverFavouriteSection {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hoverFavouriteSection {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  width: 400px;
+  background-color: white;
+  padding: 2vw;
+  color: var(--main-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border);
+  margin-top: calc(var(--margin) / 2);
+}
+
+.removeIcon:hover{
+  color: indianred;
+}
+
+.hoverFavouriteSection a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: calc(var(--margin) / 2);
+  border-radius: var(--border);
+}
+
+.confirmRemove {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  border-radius: var(--border);
+  gap: 10px;
+  padding: 10px 10px;
+  background-color: var(--secondary-color);
+}
+
+.hoverFavouriteSection a:hover {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--main-color);
+}
+
+.hoverFavouriteText {
+  display: grid !important;
+  gap: calc(var(--margin) / 2);
+}
+
+.price {
+  color: green !important;
+}
+
+.hoverFavouriteSection a img {
+  width: 20%;
+  height: auto !important;
+}
+
 .headerSection div {
   align-items: center;
 }
@@ -97,27 +180,27 @@
 
 /*PROPERTY CARD*/
 
-.propertySection{
+.propertySection {
   display: flex;
   justify-content: center;
-  gap: calc(var(--margin)*2);
-  margin-bottom: calc(var(--margin)*2);
+  gap: calc(var(--margin) * 2);
+  margin-bottom: calc(var(--margin) * 2);
   width: 100%;
 }
 
-.propertyTitle{
+.propertyTitle {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.propertyDiv{
+.propertyDiv {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.propertyTitle h3{
+.propertyTitle h3 {
   width: 100vw;
   text-align: center;
   margin: var(--margin) 0;
@@ -138,7 +221,7 @@
     display: none;
   }
 
-  .propertySection{
+  .propertySection {
     flex-wrap: wrap;
     width: 100vw;
     justify-content: center;

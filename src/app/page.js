@@ -9,6 +9,7 @@ import "@/app/globals.css";
 
 import Hero from "@/app/components/Hero/Hero";
 import PropertiesDestacadas from "./components/PropertiesDestacadas/PropertiesDestacadas";
+import InputSearch from "@/app/components/InputSearch/InputSearch";
 
 export default function Home() {
   return (

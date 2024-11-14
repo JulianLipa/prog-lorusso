@@ -4,8 +4,11 @@ import filterStyles from "@/app/components/FilterSection/FilterSection.module.cs
 import { LuRuler } from "react-icons/lu";
 import { LiaToiletSolid } from "react-icons/lia";
 import { IoIosArrowDown } from "react-icons/io";
+import { useAppContext } from "@/app/contexts/AppContexts";
+import FilterComponent from "@/app/components/FilterComponent/FilterComponent";
 
 const FilterSection = () => {
+  const { filter, setFilter } = useAppContext();
   const [formData, setFormData] = useState({
     price: "",
     amb: "",
@@ -13,6 +16,8 @@ const FilterSection = () => {
   });
 
   const [activeInput, setActiveInput] = useState(""); // State for active input
+  const [showFilteredResults, setShowFilteredResults] = useState(false); // State to control rendering of results
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,8 +30,13 @@ const FilterSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setShowFilteredResults(true);
   };
+
+  const filterFunction = () => {
+    setFilter([...filter, {formData}]);
+  }
+
 
   return (
     <section className={styles.filterSection}>
@@ -85,7 +95,7 @@ const FilterSection = () => {
           </select>
           <IoIosArrowDown className={filterStyles.selectIcon} />
         </div>
-        <button type="submit" className="button">
+        <button type="submit" className="button" onClick={() => filterFunction()}>
           Buscar
         </button>
       </form>
