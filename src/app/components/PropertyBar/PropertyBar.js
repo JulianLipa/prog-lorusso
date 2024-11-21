@@ -48,7 +48,7 @@ const PropertyBar = ({ data, loadingState }) => {
           {loadingState && <p className="subtitle">° piso</p>}
         </div>
 
-        <div className={styles.property_detail}>
+        {data.detail && (<div className={styles.property_detail}>
           <Image
             src={"/images/icons/sun.svg"}
             className={styles.icon_sun}
@@ -58,7 +58,7 @@ const PropertyBar = ({ data, loadingState }) => {
           />
           {!loadingState && <p className="subtitle">{data.detail}</p>}
           {loadingState && <p className="subtitle">detail</p>}
-        </div>
+        </div>)}
     </div>
   );
 };

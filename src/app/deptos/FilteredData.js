@@ -17,37 +17,41 @@ const FilteredData = async ({ data }) => {
 
   return (
     <div className={styles.mainDiv}>
-      <h2 className={`title text-3xl ${styles.marginAmb}`}>Todas las propiedades</h2>
       <section>
-      <div className={styles.marginAmb}>
-        <h2 className={`title text-xl ${styles.marginAmb2}`}>1 Ambiente</h2>
-        <div className="flex flex-wrap gap-5">
-          {filteredData1Amb.length > 0 &&
-            filteredData1Amb.map((product, index) => (
-              <PropertyCard key={index} data={product} />
-            ))}
+        <h2 className={`title text-3xl ${styles.marginAmb}`}>
+          Todas las propiedades
+        </h2>
+      </section>
+      <section>
+        <div className={styles.marginAmb}>
+          <h2 className={`title text-xl ${styles.marginAmb2}`}>1 Ambiente</h2>
+          <div className="flex flex-wrap gap-5">
+            {filteredData1Amb.length > 0 &&
+              filteredData1Amb.map((product, index) => (
+                <PropertyCard key={index} data={product} />
+              ))}
+          </div>
         </div>
-      </div>
 
-      <div className={styles.marginAmb}>
-        <h2 className={`title text-xl ${styles.marginAmb2}`}>2 Ambientes</h2>
-        <div className="flex flex-wrap gap-5">
-          {filteredData1Amb.length > 0 &&
-            filteredData2Amb.map((product, index) => (
-              <PropertyCard key={index} data={product} />
-            ))}
+        <div className={styles.marginAmb}>
+          <h2 className={`title text-xl ${styles.marginAmb2}`}>2 Ambientes</h2>
+          <div className="flex flex-wrap gap-5">
+            {filteredData1Amb.length > 0 &&
+              filteredData2Amb.map((product, index) => (
+                <PropertyCard key={index} data={product} />
+              ))}
+          </div>
         </div>
-      </div>
 
-      <div className={styles.marginAmb}>
-        <h2 className={`title text-xl ${styles.marginAmb2}`}>3 Ambientes</h2>
-        <div className="flex flex-wrap gap-5">
-          {filteredData1Amb.length > 0 &&
-            filteredData3Amb.map((product, index) => (
-              <PropertyCard key={index} data={product} />
-            ))}
+        <div className={styles.marginAmb}>
+          <h2 className={`title text-xl ${styles.marginAmb2}`}>3 Ambientes</h2>
+          <div className="flex flex-wrap gap-5">
+            {filteredData1Amb.length > 0 &&
+              filteredData3Amb.map((product, index) => (
+                <PropertyCard key={index} data={product} />
+              ))}
+          </div>
         </div>
-      </div>
       </section>
     </div>
   );
