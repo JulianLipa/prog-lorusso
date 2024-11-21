@@ -12,7 +12,7 @@ import { BsEye } from "react-icons/bs";
 import { useAppContext } from "@/app/contexts/AppContexts";
 
 const PropertyCard = (data, loading) => {
-  const { favourites, setFavourites } = useAppContext();
+  const { addFavourite } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
   
   if (!data.amb) {
@@ -21,12 +21,6 @@ const PropertyCard = (data, loading) => {
 
   const viewMoreClicked = () => {
     setIsLoading(true);
-  };
-
-  const addFavourite = (data) => {
-    if (!favourites.some((favourite) => favourite._id === data._id)) {
-      setFavourites([...favourites, data]);
-    }
   };
 
   return (

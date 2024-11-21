@@ -23,6 +23,11 @@
     font-weight: 400 !important;
   }
 
+  .favouriteIconAdded{
+    fill: indianred;
+    color: indianred !important;
+  }
+
   .favouriteIcon:hover{
     color: indianred;
   }
@@ -73,7 +78,7 @@
   .div_text{
     margin-left: calc(var(--margin)* 2);
     display: flex;
-    width: 30vw;
+    width: 41vw;
     flex-wrap: wrap;
     align-items: initial;
     height: fit-content;

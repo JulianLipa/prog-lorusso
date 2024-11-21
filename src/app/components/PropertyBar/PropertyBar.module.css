@@ -9,14 +9,14 @@
 .property_detail {
   border: 1px solid var(--main-color);
   color: var(--main-color);
-  padding: 0 2%;
-  border-radius: var(--border);
+  padding: 1% 2.5%;
+  border-radius: calc(var(--border)*1.5);
   justify-content: initial;
   align-items: center;
   white-space: nowrap;
   transition: all 0.5s ease;
   width: auto;
-  height: 3em;
+  height: 2.5em;
   display: flex;
 }
 

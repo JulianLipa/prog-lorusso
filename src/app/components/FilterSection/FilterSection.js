@@ -10,6 +10,7 @@ import { IoTrashOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import PropertyBar from "../PropertyBar/PropertyBar";
 
 const FilterSection = ({ deptos }) => {
   const { filter, setFilter } = useAppContext();
@@ -65,7 +66,9 @@ const FilterSection = ({ deptos }) => {
 
   return (
     <div>
-      <section className={styles.filterSection}>
+      <section
+        className={`${styles.filterSection} ${filterStyles.filterSection}`}
+      >
         <p className="title">Filtros</p>
         <p className="subtitle">Buscá de acuerdo a tus necesidades</p>
 
@@ -96,9 +99,7 @@ const FilterSection = ({ deptos }) => {
               onChange={handleChange}
               className={activeInput === "amb" ? filterStyles.activeInput : ""}
             >
-              <option value="" disabled>
-                Ambientes
-              </option>
+              <option value="">Ambientes</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -114,9 +115,7 @@ const FilterSection = ({ deptos }) => {
               onChange={handleChange}
               className={activeInput === "bath" ? filterStyles.activeInput : ""}
             >
-              <option value="" disabled>
-                Baño/s
-              </option>
+              <option value="">Baño/s</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -135,30 +134,36 @@ const FilterSection = ({ deptos }) => {
       {filteredDeptos.length > 0 && (
         <div className={styles.filteredResults}>
           <div>
-            <p className={`subtitle mb-2 text-base`}>Resultados ({filteredDeptos.length}):</p>
+            <p className={`subtitle mb-2 text-base`}>
+              Resultados ({filteredDeptos.length}):
+            </p>
             <div className={styles.filteredDiv}>
-            {filteredDeptos.length > 0 &&
-            filteredDeptos.map((filtered, index) => (
-              <Link
-                key={index}
-                href={`/deptos/${filtered._id}`}
-              >
-                <div className="flex"><Image
-                  src={`/images/deptos/${filtered.folderName}/${filtered.folderName}-1.jpg`}
-                  alt={`Property image 1`}
-                  width={500}
-                  height={300}
-                  className={`imageShowed ${styles.imageShowed}`}
-                />
-                <div className={styles.filteredText}>
-                  <p className="title text-xl mb-2">{filtered.title}</p>
-                  <h2 className={`subtitle ${styles.price}`}>
-                    u$d {filtered.price}
-                  </h2>
-                </div>
-                </div>
-              </Link>
-            ))}
+              {filteredDeptos.length > 0 &&
+                filteredDeptos.map((filtered, index) => (
+                  <Link key={index} href={`/deptos/${filtered._id}`}>
+                    <section className="flex w-full flex-wrap">
+                      <div className="flex">
+                        <Image
+                          src={`/images/deptos/${filtered.folderName}/${filtered.folderName}-1.jpg`}
+                          alt={`Property image 1`}
+                          width={500}
+                          height={300}
+                          className={`imageShowed ${styles.imageShowed}`}
+                        />
+                        <div className={styles.filteredText}>
+                          <p className="title text-xl mb-2">{filtered.title}</p>
+                          <h2 className={`subtitle ${styles.price}`}>
+                            u$d {filtered.price}
+                          </h2>
+                        </div>
+                        <PropertyBar
+                          className="flex w-full text-xs"
+                          data={filtered}
+                        />
+                      </div>
+                    </section>
+                  </Link>
+                ))}
             </div>
           </div>
         </div>

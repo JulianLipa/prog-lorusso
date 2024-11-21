@@ -16,13 +16,10 @@ import AboutSection from "./components/AboutSection/AboutSection";
 export default function Home() {
 
   return (
-    <div className="">
       <main className="main">
         <HeroServerSide />
         <PropertiesDestacadas />
         <AboutSection />
       </main>
-      <footer className=""></footer>
-    </div>
   );
 }
